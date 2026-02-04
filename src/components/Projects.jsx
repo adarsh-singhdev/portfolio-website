@@ -8,12 +8,22 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Gemini AI Text Summarizer',
+      title: 'Gemini AI Summarizer',
       subtitle: 'Chrome Extension',
       description:
-        'Engineered a Manifest V3 Chrome Extension using asynchronous JavaScript to communicate with the Google Gemini REST API, providing users with on-demand text summarization. Developed a responsive user interface featuring dark mode, text-to-speech, and one-click copy/export functionality.',
+        'Instantly summarize articles, research papers, and websites with this AI-powered Chrome Extension using Google\'s Gemini API.',
       techStack: ['JavaScript (ES6+)', 'Chrome Extension APIs', 'Google Gemini API', 'HTML5', 'CSS3'],
       date: 'Aug 2025',
+      link: 'https://github.com/adarshsingh-1/Gemini-AI-Summarizer',
+    },
+    {
+      title: 'Arcane Pass CLI',
+      subtitle: 'Serverless Password Manager',
+      description:
+        'Built a serverless password manager CLI focused on secure storage, fast access, and developer-friendly workflows.',
+      techStack: ['Node.js', 'CLI', 'Serverless'],
+      date: 'Sep 2025',
+      link: 'https://github.com/adarshsingh-1/arcane-pass-cli',
     },
     {
       title: 'LinkShort',
@@ -22,6 +32,7 @@ const Projects = () => {
         'Developed a clean and responsive web application to transform long URLs into shortened, shareable links, featuring a minimalist UI for a fast and intuitive user experience. Implemented a client-side script in vanilla JavaScript with one-click "copy to clipboard" feature for seamless sharing.',
       techStack: ['HTML', 'CSS', 'Vanilla JS', 'Node.js', 'Express.js', 'REST APIs', 'MongoDB'],
       date: 'Aug 2025',
+      link: 'https://github.com/adarshsingh-1/LinkShort',
     },
     {
       title: 'CurrenSync',
@@ -30,6 +41,7 @@ const Projects = () => {
         'Built a real-time currency converter that consumes a third-party RESTful API to fetch live exchange rates for accurate and instant multi-currency conversion. Managed asynchronous API calls using useEffect and implemented conditional rendering to handle loading states and API latency smoothly.',
       techStack: ['React.js', 'External REST API', 'Tailwind CSS'],
       date: 'Dec 2024',
+      link: 'https://github.com/adarshsingh-1/CurrenSync',
     },
   ];
 
@@ -52,13 +64,17 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="space-y-8 md:space-y-lg">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.title}
-              className={`bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer transform origin-center transition-all duration-300 ${
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className={`block no-underline bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer transform origin-center transition-all duration-300 focus:outline-none focus-visible:outline-none ${
                 isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
               }`}
               style={{
                 animationDelay: `${0.2 + index * 0.1}s`,
+                WebkitTapHighlightColor: 'transparent',
               }}
             >
               <div className="flex justify-between items-start mb-4">
@@ -96,7 +112,7 @@ const Projects = () => {
               </div>
 
               <div className="text-sm text-[#8B8276]">{project.date}</div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

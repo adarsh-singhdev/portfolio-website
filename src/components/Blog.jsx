@@ -1,291 +1,148 @@
 import React, { useRef, useState } from 'react';
-import { ArrowRight, Search, X, Share2, ArrowLeft, ArrowRight as ArrowRightIcon } from 'lucide-react';
+import { ArrowRight, X, Share2, ArrowLeft, ArrowRight as ArrowRightIcon } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useHooks';
 
 const Blog = () => {
   const blogRef = useRef(null);
   const isVisible = useIntersectionObserver(blogRef);
-  const [selectedFilter, setSelectedFilter] = useState('All Posts');
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   const blogs = [
     {
       id: 1,
-      title: 'Building a Chrome Extension with Google Gemini API',
-      date: 'Jan 15, 2026',
-      readTime: '8 min read',
-      excerpt: 'A deep dive into creating a Manifest V3 Chrome Extension that leverages the Google Gemini API for text summarization. Learn about async JavaScript, API integration, and building features like dark mode and text-to-speech.',
-      tags: ['JavaScript', 'Chrome Extension', 'Gemini API', 'Web Development'],
-      category: 'Technical Tutorials',
-      content: `A deep dive into creating a Manifest V3 Chrome Extension that leverages the Google Gemini API for text summarization. Learn about async JavaScript, API integration, and building features like dark mode and text-to-speech.
+      title: 'Forward Proxy vs Reverse Proxy vs Load Balancer',
+      date: 'Jan 28, 2026',
+      readTime: '6 min read',
+      excerpt: 'How large websites handle massive traffic while keeping data secure: forward proxy for users, reverse proxy for servers, and load balancers for scale and resilience.',
+      content: `Ever wondered how large websites handle massive traffic and keep your data secure at the same time? The answer lies in three components: forward proxy, reverse proxy, and load balancer.
 
-In this comprehensive guide, I'll walk you through the process of building a powerful Chrome Extension from scratch. We'll explore the fundamentals of Manifest V3, understand how to securely integrate with the Google Gemini API, and implement advanced features that users will love.
+A forward proxy sits between your laptop and the internet. Your requests pass through this layer before reaching any website. Companies use it to block unsafe sites, scan downloads for malware, log browsing activity, and cache frequently accessed content.
 
-## Getting Started with Manifest V3
+A reverse proxy works from the opposite side. It sits in front of servers and manages incoming user requests. Instead of exposing multiple servers directly to the internet, all traffic hits the reverse proxy first. This layer forwards requests to the right backend server, applies security checks, manages SSL encryption, and caches responses for faster delivery.
 
-Manifest V3 represents the latest evolution of Chrome Extension architecture. It introduces stricter security policies and better performance optimizations compared to its predecessor.
+Load balancing distributes traffic across multiple servers to avoid overload and crashes. Cloud load balancers handle external traffic, while reverse proxies perform smarter internal routing based on headers, sessions, or request paths.
 
-## Key Topics Covered
-
-- Setting up your extension structure
-- Configuring manifest.json properly
-- API integration and authentication
-- Async/await patterns for API calls
-- Dark mode implementation
-- Text-to-speech functionality
-
-This project was one of my most rewarding experiences, combining frontend skills with backend API integration.`,
+A forward proxy protects users. A reverse proxy protects servers. Load balancing keeps systems responsive under heavy demand.`,
     },
     {
       id: 2,
-      title: '500+ DSA Problems: Lessons from the Journey',
-      date: 'Dec 28, 2025',
-      readTime: '6 min read',
-      excerpt: 'Reflecting on solving over 500 data structures and algorithms problems across LeetCode, GeeksforGeeks, and CodeChef. Key patterns, problem-solving strategies, and how to stay consistent in your coding practice.',
-      tags: ['DSA', 'Problem Solving', 'LeetCode', 'Career Growth'],
-      category: 'Problem Solving',
-      content: `Reflecting on solving over 500 data structures and algorithms problems across LeetCode, GeeksforGeeks, and CodeChef. Key patterns, problem-solving strategies, and how to stay consistent in your coding practice.
+      title: 'From Borg to Kubernetes: The Journey to a Global Standard',
+      date: 'Jan 20, 2026',
+      readTime: '7 min read',
+      excerpt: 'How Google’s internal system Borg inspired Kubernetes, and why container orchestration became essential for modern cloud-native applications.',
 
-The journey of solving 500+ DSA problems has been transformative. It's not just about the numbers—it's about the problem-solving mindset you develop along the way.
+      content: `Ever wondered how tech giants like Google manage the massive scale of applications like Gmail or Google Drive without a hiccup? The story starts with a shift from bulky virtual machines to nimble containers and the critical need for a conductor to orchestrate them all.
 
-## The Power of Consistency
+In the early days, deploying applications meant relying on Virtual Machines (VMs). While VMs offered isolation, they were resource-intensive and slow to scale.
 
-Consistency is key. Rather than grinding for 12 hours straight, I found that dedicating 1-2 hours daily to problem-solving was far more effective and sustainable.
+Then came containerization, with Docker leading the way. Containers offered a lightweight virtualization approach, packaging an application and its dependencies without the overhead of an entire OS.
 
-## Essential Problem Patterns
+Google adopted containers at scale, but managing thousands of them manually quickly became a nightmare. This challenge gave rise to container orchestration.
 
-- Array manipulation and sliding windows
-- Tree traversals and graph algorithms
-- Dynamic programming concepts
-- Greedy algorithms
-- String processing
+To solve this internally, Google developed Borg. Later, they open-sourced the core ideas as Kubernetes (K8s), donated to the CNCF in 2014.
 
-## Key Takeaways
+## What Kubernetes Solves
 
-Every problem teaches you something new. Some problems felt impossible at first, but breaking them down into smaller steps made them manageable. This systematic approach is applicable to real-world development challenges as well.`,
+- Automated scaling
+- Self-healing workloads
+- Service discovery & load balancing
+- Automated rollouts and rollbacks
+
+Today, Kubernetes is the de facto standard for cloud-native development, used by startups and enterprises across the globe.`,
     },
     {
       id: 3,
-      title: 'Real-Time Currency Conversion with React Hooks',
-      date: 'Dec 10, 2025',
+      title: 'Encryption vs Hashing: How Secure Systems Decide',
+      date: 'Jan 12, 2026',
       readTime: '5 min read',
-      excerpt: 'Building a live currency converter using React.js, external REST APIs, and proper state management. Learn how to handle asynchronous operations with useEffect and implement smooth loading states.',
-      tags: ['React.js', 'REST API', 'JavaScript', 'Hooks'],
-      category: 'Technical Tutorials',
-      content: `Building a live currency converter using React.js, external REST APIs, and proper state management. Learn how to handle asynchronous operations with useEffect and implement smooth loading states.
+      excerpt: 'Encryption hides data so only the right person can read it. Hashing verifies data so you can trust it hasn’t changed. Both are essential to modern security.',
 
-In this tutorial, we'll build a real-time currency converter that fetches live exchange rates and provides an intuitive user interface for currency conversion.
+      content: `Think encryption and hashing are the same? They’re not — and knowing the difference changes how you design secure systems.
 
-## Project Overview
+Cryptography is the science of protecting digital information. It provides the foundation for encryption, hashing, and digital signatures.
 
-This application demonstrates several important React concepts including state management, side effects, and API integration. Users can select currencies and see live conversion rates updated in real-time.
+Encryption works by converting readable data (plain text) into unreadable text (ciphertext) using a secret key. The same or a related key is used to decrypt it back into its original form. Encryption is reversible — it locks and unlocks data.
 
-## Technologies Used
+Hashing, on the other hand, is one-way. It takes an input and produces a fixed-length hash value that cannot be converted back to the original data. Even a small change in input completely changes the output. Algorithms like SHA-256 and bcrypt are used to hash passwords and verify data integrity.
 
-- React Hooks (useState, useEffect, useCallback)
-- REST API integration
-- Error handling
-- Loading states
-
-## Implementation Details
-
-The core of our application relies on fetching exchange rates from a public API and managing state efficiently. We'll explore debouncing techniques to minimize API calls and improve performance.`,
+In short, encryption hides data so only the right person can read it, while hashing verifies data so you can trust it hasn’t changed.`,
     },
     {
       id: 4,
-      title: 'From Idea to Deployment: Building LinkShort',
-      date: 'Nov 22, 2025',
-      readTime: '7 min read',
-      excerpt: 'The complete journey of creating a URL shortener application from scratch. Covers architecture decisions, database design with MongoDB, building RESTful APIs with Node.js and Express, and creating an intuitive user interface.',
-      tags: ['Node.js', 'MongoDB', 'Express.js', 'Full-Stack'],
-      category: 'Projects Breakdown',
-      content: `The complete journey of creating a URL shortener application from scratch. Covers architecture decisions, database design with MongoDB, building RESTful APIs with Node.js and Express, and creating an intuitive user interface.
+      title: 'Kernel vs OS vs UNIX vs Linux: A Clear Mental Model',
+      date: 'Jan 05, 2026',
+      readTime: '6 min read',
+      excerpt: 'Understanding how kernels, operating systems, UNIX, and Linux relate—and why Linux is a kernel while UNIX is a family of OS design principles.',
+      content: `While studying Linux, I was confused about what an operating system and a kernel are, and how Linux is connected to UNIX.
 
-Building LinkShort was an exciting full-stack project that taught me invaluable lessons about application architecture and deployment.
+A kernel is the core software that organizes hardware and provides a common platform so all other programs can work together. It manages CPU time, memory, and device access.
 
-## Project Architecture
+An operating system includes the kernel plus additional tools that make the computer usable for humans: graphical interface, file manager, utilities, and more.
 
-Our URL shortener consists of several components:
-- React frontend for user interface
-- Node.js/Express backend for API
-- MongoDB for data persistence
-- URL validation and shortening algorithms
+UNIX was an operating system built at Bell Labs decades ago. The original UNIX is gone, but its design became so popular that many systems copied it. Today, UNIX refers to systems that follow the same philosophy and standards, usually through POSIX compliance.
 
-## Database Design
+Linux is not an operating system by itself. It’s a kernel created by Linus Torvalds in 1991. To make it usable, Linux is bundled with tools like the GNU toolchain and other software to form complete Linux distributions such as Ubuntu, Debian, or Red Hat.
 
-We designed a schema that efficiently stores long URLs, their short aliases, creation dates, and access statistics.
-
-## Key Features Implemented
-
-- URL shortening with custom aliases
-- QR code generation
-- Analytics tracking
-- Bulk URL shortening
-- Clean and intuitive UI
-
-The deployment process taught me about environment variables, error handling, and scaling considerations.`,
+Think of UNIX as the parent concept. macOS is a UNIX-based OS, while Linux is a kernel used in many operating systems.
+I have also created a repo where I am collecting useful Linux commands for DevOps learners: https://github.com/adarshsingh-1/linux-for-devops`,
     },
     {
       id: 5,
-      title: 'Docker & Kubernetes: A Beginner\'s Perspective',
-      date: 'Oct 18, 2025',
-      readTime: '10 min read',
-      excerpt: 'Getting started with containerization and orchestration. My experience learning Docker and Kubernetes, common pitfalls to avoid, and practical use cases for full-stack developers.',
-      tags: ['Docker', 'Kubernetes', 'DevOps', 'Infrastructure'],
-      category: 'Technical Tutorials',
-      content: `Getting started with containerization and orchestration. My experience learning Docker and Kubernetes, common pitfalls to avoid, and practical use cases for full-stack developers.
+      title: 'The Architectural Choice That Can Make or Break Your Application',
+      date: 'Feb 05, 2026',
+      readTime: '6 min read',
+      excerpt: 'A practical breakdown of Monolith vs Microservices, the trade-offs, and why early architecture decisions shape scalability and resilience.',
+      content: `Ever built an application that works perfectly, only to watch it crumble as traffic grows? The architectural choice you make at the beginning is often the reason. Let's break down the two most common approaches: Monolith vs. Microservices.
 
-DevOps might seem intimidating at first, but understanding Docker and Kubernetes is becoming increasingly essential for modern developers.
+Initially, most applications start as a Monolith. True to its name (mono means "one"), this is where all your backend code for every feature—be it authentication, payments, or order processing for an e-commerce site—lives together in a single repository. The beauty of this approach lies in its simplicity. You build one codebase, deploy it to one server, and you're up and running. When traffic increases, you can scale horizontally by simply adding more servers, each running an identical copy of your entire application.
 
-## Why Containerization Matters
+But this simplicity hides a critical vulnerability: a single point of failure. Imagine a small bug in the authentication code crashes a server. In a monolithic world, that doesn't just take down authentication; it takes down everything. Your payment gateway and order service go offline too, all because of one minor error in a completely different part of the application. As the codebase grows, it becomes complex and a single bug can have catastrophic consequences.
 
-Containers solve the "works on my machine" problem. They package your application with all its dependencies into a standardized unit.
+This is where Microservices emerge as the solution. The core idea is a separation of concerns. Instead of one giant codebase, you break down every feature into its own independent, "micro" service. Authentication becomes its own service with its own code. The payment system gets its own service. The order service gets its own. Each one is developed, deployed, and runs independently.
 
-## Docker Basics
+This architecture solves major problems but introduces new challenges. Suddenly, you have multiple servers, repositories, and codebases to handle, which increases management complexity and often requires a dedicated team. Costs can also rise, as you need to run at least one server for each service, even if traffic is low.
 
-- Creating Dockerfiles
-- Building and running images
-- Container networking
-- Volume management
+However, the advantages are immense. You gain the power to scale independently. During a massive sale, you can spin up 10 servers for your payment service while keeping the authentication service at just two, optimizing costs and resources. Most importantly, there is no single point of failure. If the authentication service goes down, your customers can still browse products and manage their orders because the other services are completely unaffected and still running.
 
-## Kubernetes Introduction
-
-Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerized applications.
-
-## Lessons Learned
-
-Start simple. Don't try to master everything at once. Begin with Docker, understand the fundamentals, then explore Kubernetes.`,
+So, what's the right choice? It's a trade-off between the straightforward simplicity of a monolith and the resilient, scalable power of microservices.`,
     },
     {
       id: 6,
-      title: 'Tailwind CSS: Why I Made the Switch',
-      date: 'Sep 30, 2025',
-      readTime: '4 min read',
-      excerpt: 'Moving from traditional CSS and component libraries to utility-first CSS with Tailwind. Discussing the benefits, learning curve, and how it improved my development workflow and design consistency.',
-      tags: ['Tailwind CSS', 'CSS', 'Frontend', 'Web Design'],
-      category: 'Technical Tutorials',
-      content: `Moving from traditional CSS and component libraries to utility-first CSS with Tailwind. Discussing the benefits, learning curve, and how it improved my development workflow and design consistency.
+      title: 'Kafka Without the Jargon',
+      date: 'Feb 05, 2026',
+      readTime: '7 min read',
+      excerpt: 'How Kafka decouples services, prevents data loss, and absorbs traffic spikes—explained through a simple StreamStore story.',
+      content: `The Problem: A Tightly-Coupled System
+    Let's imagine an e-commerce application called StreamStore, built with several microservices: payments, inventory, orders, and users.
 
-Making the switch to Tailwind CSS was one of the best decisions I made in my frontend development journey.
+When a customer places an order, it triggers a domino effect. The orders service needs to tell the inventory service to update the stock, the users service to send a confirmation email, the payments service to generate an invoice, and so on.
 
-## The Traditional Approach
+Initially, your startup used a simple microservices architecture where services called each other directly. The orders service would tell all the other services, "Hey, we just processed an order. Go update your systems accordingly." This worked fine at first.
 
-Previously, I wrote custom CSS or used component libraries. While these approaches work, they come with trade-offs in flexibility and development speed.
+However, when a Black Friday sale caused a sudden surge in customers, the application crashed. The architecture couldn't handle the load, leading to several critical problems:
 
-## Why Tailwind?
+- Tightly Coupled Architecture: Each service depended directly on the others being available.
+- Synchronous Execution: The orders service had to wait for each subsequent service to finish its task before it could proceed, slowing everything down.
+- Single Points of Failure: If the inventory service went down for just 10 minutes, it could create a backlog of orders that would take hours to clear.
+- Data Loss: If the analytics service was down, all incoming event data for that period was lost forever.
 
-- Rapid development with utility classes
-- Built-in responsive design
-- Consistent design system
-- Smaller bundle sizes with PurgeCSS
-- Excellent documentation
+The Solution: Redesigning with Kafka as a Broker
+Instead of having services call each other directly, we can introduce a tool that sits in the middle and acts as a broker. Think of it like a post office. When you order something online, the seller doesn't deliver the package to you directly. They hand it to the post office, which then ensures it gets delivered to you.
 
-## Learning Curve
+Kafka is that post office. It's a highly scalable system for managing streams of events that sits in the middle of your microservices.
 
-There's definitely a learning curve, but once you understand the philosophy, you'll never want to go back to writing traditional CSS.
+Now, when an order is placed, the orders service simply sends an event to Kafka. This event says, "An order was made for this customer. Please make this information available to whoever needs it." Kafka then makes this event available to the inventory, payments, users, and analytics services.
 
-## Real-World Benefits
+How Kafka Solves Each Problem
+- Decoupled Services: Each service operates independently. If analytics goes down, orders still process smoothly because they're not waiting for a direct response.
+- Asynchronous Processing: The orders service publishes events and moves on immediately. Other services consume events at their own pace, without blocking the order flow.
+- No More Data Loss: Kafka stores events reliably. Even if a service is down for hours, it can replay missed events when it comes back online—nothing is lost.
+- Handles Traffic Spikes: During the next Black Friday sale, Kafka buffers the surge. Services process events as fast as they can, without crashing under sudden load.
 
-I've noticed significant improvements in development speed and design consistency across projects. The responsive design capabilities are particularly impressive.`,
-    },
-    {
-      id: 7,
-      title: 'Hackathon Chronicles: Building Under Pressure',
-      date: 'Aug 15, 2025',
-      readTime: '6 min read',
-      excerpt: 'Lessons learned from participating in Cod-a-Fest hackathon and building a web-based learning platform for middle school students. Time management, teamwork, and delivering MVPs quickly.',
-      tags: ['Hackathon', 'Teamwork', 'Education', 'Web Development'],
-      category: 'Projects Breakdown',
-      content: `Lessons learned from participating in Cod-a-Fest hackathon and building a web-based learning platform for middle school students. Time management, teamwork, and delivering MVPs quickly.
-
-Hackathons are intense, exciting events that push you to deliver results quickly. Here's what I learned from my experience at Cod-a-Fest.
-
-## The Challenge
-
-We had 24-48 hours to build a functional application that addresses a real problem. We chose to build an interactive learning platform for middle school students.
-
-## Team Dynamics
-
-Working with talented developers from different backgrounds taught me the value of clear communication and distributed responsibilities.
-
-## Building the MVP
-
-We focused on core features:
-- Interactive problem sets
-- Real-time feedback
-- Gamification elements
-- User progress tracking
-
-## Time Management
-
-Prioritization was crucial. We identified must-have features and nice-to-have features early on, allowing us to focus our efforts efficiently.
-
-## Key Takeaways
-
-Hackathons taught me that done is better than perfect. Shipping a working MVP beats spending time on premature optimization.`,
-    },
-    {
-      id: 8,
-      title: 'My Full-Stack Development Learning Roadmap',
-      date: 'Jul 20, 2025',
-      readTime: '9 min read',
-      excerpt: 'The path I took to become a full-stack developer. Resources, courses, projects, and timelines. A guide for anyone starting their journey in web development with the MERN stack.',
-      tags: ['Career', 'Learning', 'MERN Stack', 'Roadmap'],
-      category: 'Career Insights',
-      content: `The path I took to become a full-stack developer. Resources, courses, projects, and timelines. A guide for anyone starting their journey in web development with the MERN stack.
-
-Many people ask me about my learning journey. Here's a detailed breakdown of how I transitioned into full-stack development.
-
-## Phase 1: Foundations (3-4 months)
-
-- HTML, CSS, and JavaScript fundamentals
-- DOM manipulation
-- Responsive design principles
-- First small projects
-
-## Phase 2: Frontend Deep Dive (3-4 months)
-
-- React fundamentals and hooks
-- State management
-- API integration
-- Building complex UIs
-
-## Phase 3: Backend Exploration (3-4 months)
-
-- Node.js and Express.js
-- Database design with MongoDB
-- RESTful API design
-- Authentication and authorization
-
-## Phase 4: Integration & Real Projects (ongoing)
-
-- Building full-stack applications
-- DevOps and deployment
-- Performance optimization
-- Continuous learning
-
-## Resources That Helped
-
-- Online courses from reputable platforms
-- Documentation reading
-- Building projects and learning from failures
-- Engaging with the developer community
-
-## Advice for Beginners
-
-Be patient with yourself. This journey takes time. Focus on understanding concepts deeply rather than rushing through content. Build projects that interest you—they're the best teachers.`,
+The Results: A Resilient Architecture
+With Kafka in place, StreamStore transformed from a fragile, tightly-coupled system into a resilient, scalable architecture. Services became independent, failures became isolated, and the system could handle traffic spikes gracefully.`,
     },
   ];
-
-  const filters = ['All Posts', 'Technical Tutorials', 'Problem Solving', 'Career Insights', 'Projects Breakdown'];
-
-  const filteredBlogs = blogs.filter((blog) => {
-    const matchesFilter = selectedFilter === 'All Posts' || blog.category === selectedFilter;
-    const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
 
   const handleShare = (blog) => {
     const text = `Check out this blog: "${blog.title}" - ${window.location.href}`;
@@ -319,51 +176,9 @@ Be patient with yourself. This journey takes time. Focus on understanding concep
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div
-          className={`mb-12 flex justify-end transition-all duration-1000 ${
-            isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ animationDelay: '0.2s' }}
-        >
-          <div className="relative w-full md:w-64">
-            <Search size={18} className="absolute left-3 top-3.5 text-[#D4845C]" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-[#F0EBE0] border border-[#DDD8C8] rounded-lg text-body text-[#2C2416] placeholder-[#8B8276] focus:outline-none focus:ring-2 focus:ring-[#D4845C]"
-            />
-          </div>
-        </div>
-
-        {/* Filter Tabs */}
-        <div
-          className={`flex flex-wrap gap-3 mb-16 transition-all duration-1000 ${
-            isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ animationDelay: '0.3s' }}
-        >
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setSelectedFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm ${
-                selectedFilter === filter
-                  ? 'bg-[#D4845C] text-white'
-                  : 'bg-transparent border-2 border-[#D4845C] text-[#D4845C] hover:bg-[#D4845C] hover:text-white'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
         {/* Blog Cards */}
-        {filteredBlogs.length > 0 ? (
-          <div className="space-y-8">
-            {filteredBlogs.map((blog, idx) => (
+        <div className="space-y-8">
+          {blogs.map((blog, idx) => (
               <div
                 key={blog.id}
                 onClick={() => setSelectedBlog(blog)}
@@ -387,18 +202,6 @@ Be patient with yourself. This journey takes time. Focus on understanding concep
                   {blog.excerpt}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {blog.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-block bg-[#E8E3D5] text-[#D4845C] px-3 py-1 rounded-full text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
                 {/* Read More Arrow */}
                 <div className="absolute top-8 right-8">
                   <ArrowRight
@@ -409,11 +212,6 @@ Be patient with yourself. This journey takes time. Focus on understanding concep
               </div>
             ))}
           </div>
-        ) : (
-          <div className="text-center py-20">
-            <p className="text-body-lg text-[#8B8276]">No articles found. Try adjusting your search or filter.</p>
-          </div>
-        )}
       </div>
 
       {/* Modal */}
@@ -482,28 +280,16 @@ Be patient with yourself. This journey takes time. Focus on understanding concep
                 })}
               </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-[#DDD8C8]">
-                {selectedBlog.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block bg-[#F0EBE0] text-[#D4845C] px-4 py-2 rounded-full text-sm font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
               {/* Navigation */}
               <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#DDD8C8]">
                 <button
                   onClick={() => {
-                    const currentIdx = filteredBlogs.findIndex(b => b.id === selectedBlog.id);
+                    const currentIdx = blogs.findIndex(b => b.id === selectedBlog.id);
                     if (currentIdx > 0) {
-                      setSelectedBlog(filteredBlogs[currentIdx - 1]);
+                      setSelectedBlog(blogs[currentIdx - 1]);
                     }
                   }}
-                  disabled={filteredBlogs.findIndex(b => b.id === selectedBlog.id) === 0}
+                  disabled={blogs.findIndex(b => b.id === selectedBlog.id) === 0}
                   className="flex items-center gap-2 text-[#D4845C] hover:text-[#C57549] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <ArrowLeft size={18} />
@@ -512,12 +298,12 @@ Be patient with yourself. This journey takes time. Focus on understanding concep
 
                 <button
                   onClick={() => {
-                    const currentIdx = filteredBlogs.findIndex(b => b.id === selectedBlog.id);
-                    if (currentIdx < filteredBlogs.length - 1) {
-                      setSelectedBlog(filteredBlogs[currentIdx + 1]);
+                    const currentIdx = blogs.findIndex(b => b.id === selectedBlog.id);
+                    if (currentIdx < blogs.length - 1) {
+                      setSelectedBlog(blogs[currentIdx + 1]);
                     }
                   }}
-                  disabled={filteredBlogs.findIndex(b => b.id === selectedBlog.id) === filteredBlogs.length - 1}
+                  disabled={blogs.findIndex(b => b.id === selectedBlog.id) === blogs.length - 1}
                   className="flex items-center gap-2 text-[#D4845C] hover:text-[#C57549] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <span>Next</span>
