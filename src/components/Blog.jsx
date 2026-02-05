@@ -10,7 +10,7 @@ const Blog = () => {
   const blogs = [
     {
       id: 1,
-      title: 'Forward Proxy vs Reverse Proxy vs Load Balancer',
+      title: "Proxies and Load Balancers: What's the Difference?",
       date: 'Jan 28, 2026',
       readTime: '6 min read',
       excerpt: 'How large websites handle massive traffic while keeping data secure: forward proxy for users, reverse proxy for servers, and load balancers for scale and resilience.',
@@ -182,7 +182,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
               <div
                 key={blog.id}
                 onClick={() => setSelectedBlog(blog)}
-                className={`bg-[#F0EBE0] rounded-2xl p-8 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer relative transition-all duration-1000 ${
+                className={`bg-[#F0EBE0] rounded-2xl p-8 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer relative ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
