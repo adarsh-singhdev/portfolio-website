@@ -53,7 +53,7 @@ const Hero = () => {
         >
           Full-Stack Developer & Problem Solver
           <br />
-          Building scalable web applications with modern technologies and clean, efficient code
+          I build scalable web applications with modern technologies and clean, efficient code.
         </p>
 
         {/* Social Links */}

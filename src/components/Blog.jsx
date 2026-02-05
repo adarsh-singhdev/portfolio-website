@@ -177,41 +177,41 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
         </div>
 
         {/* Blog Cards */}
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 justify-items-center">
           {blogs.map((blog, idx) => (
-              <div
-                key={blog.id}
-                onClick={() => setSelectedBlog(blog)}
-                className={`bg-[#F0EBE0] rounded-2xl p-8 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer relative ${
-                  isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
-              >
-                {/* Date and Read Time */}
-                <p className="text-sm text-[#8B8276] mb-3">
-                  {blog.date} • {blog.readTime}
-                </p>
+            <div
+              key={blog.id}
+              onClick={() => setSelectedBlog(blog)}
+              className={`bg-[#F0EBE0] rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer w-full max-w-[320px] aspect-square flex flex-col justify-between ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
+            >
+              {/* Top Section: Date and Read Time */}
+              <p className="text-sm text-[#8B8276]">
+                {blog.date} • {blog.readTime}
+              </p>
 
-                {/* Title */}
-                <h3 className="text-2xl md:text-h3 font-bold font-serif text-[#2C2416] mb-4 group-hover:text-[#D4845C] transition-colors duration-300">
+              {/* Middle Section: Title + Excerpt */}
+              <div className="mt-4 flex-1">
+                <h3 className="text-[20px] md:text-[22px] font-bold font-serif text-[#2C2416] mb-3 group-hover:text-[#D4845C] transition-colors duration-300 line-clamp-2">
                   {blog.title}
                 </h3>
-
-                {/* Excerpt */}
-                <p className="text-body md:text-body-lg text-[#5C5246] mb-4 line-clamp-3">
+                <p className="text-[14px] md:text-[15px] text-[#5C5246] line-clamp-4">
                   {blog.excerpt}
                 </p>
-
-                {/* Read More Arrow */}
-                <div className="absolute top-8 right-8">
-                  <ArrowRight
-                    size={24}
-                    className="text-[#D4845C] group-hover:translate-x-1 transition-transform duration-300"
-                  />
-                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Bottom Section: Arrow */}
+              <div className="mt-4 flex items-end justify-end">
+                <ArrowRight
+                  size={22}
+                  className="text-[#D4845C] group-hover:translate-x-1 transition-transform duration-300 shrink-0"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Modal */}
