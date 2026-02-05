@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /private
-
-Sitemap: https://adarshsingh.dev/sitemap.xml
+Disallow: /privateSitemap: https://adarshsinghdev.in/sitemap.xml
+Sitemap: https://adarshsinghdev.in/sitemap.xml  
