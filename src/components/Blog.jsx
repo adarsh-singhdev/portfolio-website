@@ -11,8 +11,6 @@ const Blog = () => {
     {
       id: 1,
       title: "Proxies and Load Balancers: What's the Difference?",
-      date: 'Jan 28, 2026',
-      readTime: '6 min read',
       excerpt: 'How large websites handle massive traffic while keeping data secure: forward proxy for users, reverse proxy for servers, and load balancers for scale and resilience.',
       content: `Ever wondered how large websites handle massive traffic and keep your data secure at the same time? The answer lies in three components: forward proxy, reverse proxy, and load balancer.
 
@@ -27,8 +25,6 @@ A forward proxy protects users. A reverse proxy protects servers. Load balancing
     {
       id: 2,
       title: 'From Borg to Kubernetes: The Journey to a Global Standard',
-      date: 'Jan 20, 2026',
-      readTime: '7 min read',
       excerpt: 'How Google’s internal system Borg inspired Kubernetes, and why container orchestration became essential for modern cloud-native applications.',
 
       content: `Ever wondered how tech giants like Google manage the massive scale of applications like Gmail or Google Drive without a hiccup? The story starts with a shift from bulky virtual machines to nimble containers and the critical need for a conductor to orchestrate them all.
@@ -53,8 +49,6 @@ Today, Kubernetes is the de facto standard for cloud-native development, used by
     {
       id: 3,
       title: 'Encryption vs Hashing: How Secure Systems Decide',
-      date: 'Jan 12, 2026',
-      readTime: '5 min read',
       excerpt: 'Encryption hides data so only the right person can read it. Hashing verifies data so you can trust it hasn’t changed. Both are essential to modern security.',
 
       content: `Think encryption and hashing are the same? They’re not — and knowing the difference changes how you design secure systems.
@@ -70,8 +64,6 @@ In short, encryption hides data so only the right person can read it, while hash
     {
       id: 4,
       title: 'Kernel vs OS vs UNIX vs Linux: A Clear Mental Model',
-      date: 'Jan 05, 2026',
-      readTime: '6 min read',
       excerpt: 'Understanding how kernels, operating systems, UNIX, and Linux relate—and why Linux is a kernel while UNIX is a family of OS design principles.',
       content: `While studying Linux, I was confused about what an operating system and a kernel are, and how Linux is connected to UNIX.
 
@@ -89,8 +81,6 @@ I have also created a repo where I am collecting useful Linux commands for DevOp
     {
       id: 5,
       title: 'The Architectural Choice That Can Make or Break Your Application',
-      date: 'Feb 05, 2026',
-      readTime: '6 min read',
       excerpt: 'A practical breakdown of Monolith vs Microservices, the trade-offs, and why early architecture decisions shape scalability and resilience.',
       content: `Ever built an application that works perfectly, only to watch it crumble as traffic grows? The architectural choice you make at the beginning is often the reason. Let's break down the two most common approaches: Monolith vs. Microservices.
 
@@ -109,8 +99,6 @@ So, what's the right choice? It's a trade-off between the straightforward simpli
     {
       id: 6,
       title: 'Kafka Without the Jargon',
-      date: 'Feb 05, 2026',
-      readTime: '7 min read',
       excerpt: 'How Kafka decouples services, prevents data loss, and absorbs traffic spikes—explained through a simple StreamStore story.',
       content: `The Problem: A Tightly-Coupled System
     Let's imagine an e-commerce application called StreamStore, built with several microservices: payments, inventory, orders, and users.
@@ -187,13 +175,8 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
               }`}
               style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
             >
-              {/* Top Section: Date and Read Time */}
-              <p className="text-sm text-[#8B8276]">
-                {blog.date} • {blog.readTime}
-              </p>
-
-              {/* Middle Section: Title + Excerpt */}
-              <div className="mt-4 flex-1">
+              {/* Title + Excerpt */}
+              <div className="flex-1">
                 <h3 className="text-[20px] md:text-[22px] font-bold font-serif text-[#2C2416] mb-3 group-hover:text-[#D4845C] transition-colors duration-300 line-clamp-2">
                   {blog.title}
                 </h3>
@@ -229,11 +212,6 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
 
             {/* Modal Content */}
             <div className="p-8 md:p-12">
-              {/* Date and Read Time */}
-              <p className="text-sm text-[#8B8276] mb-4">
-                {selectedBlog.date} • {selectedBlog.readTime}
-              </p>
-
               {/* Title */}
               <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#2C2416] mb-6">
                 {selectedBlog.title}

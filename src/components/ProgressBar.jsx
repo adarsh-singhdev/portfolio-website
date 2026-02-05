@@ -6,8 +6,8 @@ const ProgressBar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 h-1 bg-[#D4845C] z-40 transition-all duration-300"
-      style={{ width: `${progress}%` }}
+      className="fixed top-0 left-0 h-1 w-full bg-[#D4845C] z-40 transition-transform duration-100"
+      style={{ transform: `scaleX(${progress / 100})`, transformOrigin: 'left' }}
     />
   );
 };

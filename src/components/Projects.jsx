@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useHooks';
 
 const Projects = () => {
@@ -69,7 +69,7 @@ const Projects = () => {
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              className={`block no-underline bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer transform origin-center transition-all duration-300 focus:outline-none focus-visible:outline-none ${
+              className={`block no-underline bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer transform origin-center focus:outline-none focus-visible:outline-none ${
                 isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
               }`}
               style={{
@@ -86,10 +86,13 @@ const Projects = () => {
                     {project.subtitle}
                   </p>
                 </div>
-                <ArrowRight
-                  size={24}
-                  className="text-[#D4845C] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2 ml-4 flex-shrink-0"
-                />
+                <div className="flex items-center ml-4 flex-shrink-0">
+                  <Github
+                    size={20}
+                    className="text-[#5C5246] opacity-70 group-hover:text-[#D4845C] transition-colors duration-300"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
 
               <p className="text-body text-[#5C5246] mb-6 leading-relaxed">
