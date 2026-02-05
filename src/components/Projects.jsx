@@ -49,7 +49,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={projectsRef}
-      className="py-20 md:py-32 px-5 md:px-0 relative"
+      className="py-24 md:py-36 px-5 md:px-0 relative"
     >
       <div className="max-w-container mx-auto">
         {/* Section Title */}

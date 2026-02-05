@@ -23,8 +23,12 @@ html::-webkit-scrollbar {
 body {
   font-family: 'Inter', sans-serif;
   background-color: #E8E3D5;
+  background-image: radial-gradient(rgba(44, 36, 22, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: #2C2416;
   overflow-x: hidden;
+  line-height: 1.7;
+  font-weight: 400;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -37,6 +41,11 @@ body::-webkit-scrollbar {
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
   color: #2C2416;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.7;
 }
 
 /* Custom Animations */

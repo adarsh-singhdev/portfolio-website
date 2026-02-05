@@ -44,7 +44,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={contactRef}
-      className="py-20 md:py-32 px-5 md:px-0 relative mb-20 md:mb-0"
+      className="py-24 md:py-36 px-5 md:px-0 relative mb-24 md:mb-0"
     >
       <div className="max-w-container mx-auto">
         {/* Section Title */}
