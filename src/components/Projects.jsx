@@ -11,7 +11,7 @@ const Projects = () => {
       title: 'Gemini AI Summarizer',
       subtitle: 'Chrome Extension',
       description:
-        'Instantly summarize articles, research papers, and websites with this AI-powered Chrome Extension using Google\'s Gemini API.',
+        'Chrome Extension using Google Gemini API for AI-powered summarization of articles and research papers. Features dark mode, text-to-speech, and one-click export.',
       techStack: ['JavaScript (ES6+)', 'Chrome Extension APIs', 'Google Gemini API', 'HTML5', 'CSS3'],
       date: 'Aug 2025',
       repoLink: 'https://github.com/adarshsingh-1/Gemini-AI-Summarizer',
@@ -20,7 +20,7 @@ const Projects = () => {
       title: 'Arcane Pass CLI',
       subtitle: 'Serverless Password Manager',
       description:
-        'Built a serverless password manager CLI focused on secure storage, fast access, and developer-friendly workflows.',
+        'Engineered a serverless CLI password manager with AES-256 encryption for secure credential storage. Features include rapid terminal-based access, local-first architecture, and developer-optimized commands for seamless integration into coding workflows.',
       techStack: ['Node.js', 'CLI', 'Serverless'],
       date: 'Sep 2025',
       repoLink: 'https://github.com/adarshsingh-1/arcane-pass-cli',
@@ -29,7 +29,7 @@ const Projects = () => {
       title: 'CurrenSync',
       subtitle: 'Live Currency Converter',
       description:
-        'Built a real-time currency converter that consumes a third-party RESTful API to fetch live exchange rates for accurate and instant multi-currency conversion. Managed asynchronous API calls using useEffect and implemented conditional rendering to handle loading states and API latency smoothly.',
+        'Developed a real-time currency converter integrating third-party REST APIs for live exchange rates across multiple currencies. Implemented asynchronous data fetching with useEffect hook and conditional rendering to provide smooth loading states and handle API latency gracefully.',
       techStack: ['React.js', 'External REST API', 'Tailwind CSS'],
       date: 'Dec 2024',
       liveLink: 'https://currensync.pages.dev/',
@@ -39,7 +39,7 @@ const Projects = () => {
       title: 'NikeNest',
       subtitle: 'E-Commerce Landing Page',
       description:
-        'A modern, responsive e-commerce landing page showcasing a premium Nike shoe collection. Built with React, Vite, and Tailwind CSS, featuring product grids, customer reviews, and a fully responsive design optimized for performance.',
+        "Designed a modern e-commerce landing page showcasing Nike's premium shoe collection with responsive product grids, customer reviews, and service highlights. Leveraged React for component reusability, Vite for optimized build performance, and Tailwind CSS for clean, utility-first styling.",
       techStack: ['React.js', 'Vite', 'Tailwind CSS', 'JavaScript (ES6+)'],
       date: 'Jan 2025',
       liveLink: 'https://nikenest.pages.dev/',
@@ -49,7 +49,7 @@ const Projects = () => {
       title: 'Snip.ly',
       subtitle: 'Full-Stack URL Shortener',
       description:
-        'A production-ready URL shortener with JWT authentication, real-time click tracking, and link preview cards. Built with the MERN stack and deployed on Cloudflare infrastructure, featuring dark mode and comprehensive analytics dashboard.',
+        'Engineered a production-ready URL shortener with JWT authentication, real-time click analytics, and Open Graph link previews. Deployed on Cloudflare Workers with D1 database for edge performance, featuring a responsive dashboard with dark mode and comprehensive link management.',
       techStack: [
         'React.js',
         'Node.js',
@@ -96,7 +96,7 @@ const Projects = () => {
               }}
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="flex-1">
+                <div className="flex-1 min-h-[72px]">
                   <h3 className="text-2xl md:text-h4 font-bold font-serif text-[#2C2416] mb-1">
                     {project.title}
                   </h3>
