@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useHooks';
 
 const Projects = () => {
@@ -14,7 +14,7 @@ const Projects = () => {
         'Instantly summarize articles, research papers, and websites with this AI-powered Chrome Extension using Google\'s Gemini API.',
       techStack: ['JavaScript (ES6+)', 'Chrome Extension APIs', 'Google Gemini API', 'HTML5', 'CSS3'],
       date: 'Aug 2025',
-      link: 'https://github.com/adarshsingh-1/Gemini-AI-Summarizer',
+      repoLink: 'https://github.com/adarshsingh-1/Gemini-AI-Summarizer',
     },
     {
       title: 'Arcane Pass CLI',
@@ -23,16 +23,7 @@ const Projects = () => {
         'Built a serverless password manager CLI focused on secure storage, fast access, and developer-friendly workflows.',
       techStack: ['Node.js', 'CLI', 'Serverless'],
       date: 'Sep 2025',
-      link: 'https://github.com/adarshsingh-1/arcane-pass-cli',
-    },
-    {
-      title: 'LinkShort',
-      subtitle: 'URL Shortener Application',
-      description:
-        'Developed a clean and responsive web application to transform long URLs into shortened, shareable links, featuring a minimalist UI for a fast and intuitive user experience. Implemented a client-side script in vanilla JavaScript with one-click "copy to clipboard" feature for seamless sharing.',
-      techStack: ['HTML', 'CSS', 'Vanilla JS', 'Node.js', 'Express.js', 'REST APIs', 'MongoDB'],
-      date: 'Aug 2025',
-      link: 'https://github.com/adarshsingh-1/LinkShort',
+      repoLink: 'https://github.com/adarshsingh-1/arcane-pass-cli',
     },
     {
       title: 'CurrenSync',
@@ -41,7 +32,37 @@ const Projects = () => {
         'Built a real-time currency converter that consumes a third-party RESTful API to fetch live exchange rates for accurate and instant multi-currency conversion. Managed asynchronous API calls using useEffect and implemented conditional rendering to handle loading states and API latency smoothly.',
       techStack: ['React.js', 'External REST API', 'Tailwind CSS'],
       date: 'Dec 2024',
-      link: 'https://github.com/adarshsingh-1/CurrenSync',
+      liveLink: 'https://currensync.pages.dev/',
+      repoLink: 'https://github.com/adarshsingh-1/CurrenSync',
+    },
+    {
+      title: 'NikeNest',
+      subtitle: 'E-Commerce Landing Page',
+      description:
+        'A modern, responsive e-commerce landing page showcasing a premium Nike shoe collection. Built with React, Vite, and Tailwind CSS, featuring product grids, customer reviews, and a fully responsive design optimized for performance.',
+      techStack: ['React.js', 'Vite', 'Tailwind CSS', 'JavaScript (ES6+)'],
+      date: 'Jan 2025',
+      liveLink: 'https://nikenest.pages.dev/',
+      repoLink: 'https://github.com/adarshsingh-1/NikeNest',
+    },
+    {
+      title: 'Snip.ly',
+      subtitle: 'Full-Stack URL Shortener',
+      description:
+        'A production-ready URL shortener with JWT authentication, real-time click tracking, and link preview cards. Built with the MERN stack and deployed on Cloudflare infrastructure, featuring dark mode and comprehensive analytics dashboard.',
+      techStack: [
+        'React.js',
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'JWT',
+        'Cloudflare Workers',
+        'Cloudflare D1',
+        'Tailwind CSS',
+      ],
+      date: 'Feb 2025',
+      liveLink: 'https://snip-ly.pages.dev/',
+      repoLink: 'https://github.com/adarshsingh-1/snip.ly',
     },
   ];
 
@@ -64,12 +85,9 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="space-y-8 md:space-y-lg">
           {projects.map((project, index) => (
-            <a
+            <div
               key={project.title}
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className={`block no-underline bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer transform origin-center focus:outline-none focus-visible:outline-none ${
+              className={`block bg-[#F0EBE0] rounded-2xl p-8 md:p-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group transform origin-center focus:outline-none focus-visible:outline-none ${
                 isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
               }`}
               style={{
@@ -86,12 +104,29 @@ const Projects = () => {
                     {project.subtitle}
                   </p>
                 </div>
-                <div className="flex items-center ml-4 flex-shrink-0">
-                  <Github
-                    size={20}
-                    className="text-[#5C5246] opacity-70 group-hover:text-[#D4845C] transition-colors duration-300"
-                    aria-hidden="true"
-                  />
+                <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-[#5C5246] opacity-80 hover:text-[#D4845C] transition-colors duration-300"
+                      aria-label={`Open ${project.title} live site`}
+                    >
+                      <ExternalLink size={18} aria-hidden="true" />
+                      <span className="text-sm font-medium">Live</span>
+                    </a>
+                  )}
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-[#5C5246] opacity-70 hover:text-[#D4845C] transition-colors duration-300"
+                    aria-label={`Open ${project.title} GitHub repository`}
+                  >
+                    <Github size={18} aria-hidden="true" />
+                    <span className="text-sm font-medium">GitHub</span>
+                  </a>
                 </div>
               </div>
 
@@ -115,7 +150,7 @@ const Projects = () => {
               </div>
 
               <div className="text-sm text-[#8B8276]">{project.date}</div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
