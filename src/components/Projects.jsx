@@ -21,7 +21,7 @@ const Projects = () => {
       subtitle: 'Serverless Password Manager',
       description:
         'Engineered a serverless CLI password manager with AES-256 encryption for secure credential storage. Features include rapid terminal-based access, local-first architecture, and developer-optimized commands for seamless integration into coding workflows.',
-      techStack: ['Node.js', 'CLI', 'Serverless'],
+      techStack: ['Node.js', 'CLI', 'AES-256', 'Serverless'],
       date: 'Sep 2025',
       repoLink: 'https://github.com/adarshsingh-1/arcane-pass-cli',
     },
@@ -30,7 +30,7 @@ const Projects = () => {
       subtitle: 'Live Currency Converter',
       description:
         'Developed a real-time currency converter integrating third-party REST APIs for live exchange rates across multiple currencies. Implemented asynchronous data fetching with useEffect hook and conditional rendering to provide smooth loading states and handle API latency gracefully.',
-      techStack: ['React.js', 'External REST API', 'Tailwind CSS'],
+      techStack: ['React.js', 'REST APIs', 'JavaScript (ES6+)', 'Tailwind CSS'],
       date: 'Dec 2024',
       liveLink: 'https://currensync.pages.dev/',
       repoLink: 'https://github.com/adarshsingh-1/CurrenSync',
@@ -95,7 +95,7 @@ const Projects = () => {
                 WebkitTapHighlightColor: 'transparent',
               }}
             >
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start mb-4">
                 <div className="flex-1 min-h-[72px]">
                   <h3 className="text-2xl md:text-h4 font-bold font-serif text-[#2C2416] mb-1">
                     {project.title}
@@ -104,7 +104,7 @@ const Projects = () => {
                     {project.subtitle}
                   </p>
                 </div>
-                <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                <div className="flex items-center gap-3 flex-shrink-0 sm:ml-4">
                   {project.liveLink && (
                     <a
                       href={project.liveLink}
