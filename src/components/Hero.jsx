@@ -32,7 +32,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-0 pb-20 md:pb-0 relative overflow-hidden">
+    <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20 md:pt-0 pb-12 md:pb-0 relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
