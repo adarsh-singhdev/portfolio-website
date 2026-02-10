@@ -201,21 +201,24 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
       {selectedBlog && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 md:p-0">
           <div className="bg-[#E8E3D5] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in-up">
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedBlog(null)}
-              className="absolute top-6 right-6 p-2 hover:bg-[#F0EBE0] rounded-lg transition-colors"
-              aria-label="Close modal"
-            >
-              <X size={24} className="text-[#2C2416]" />
-            </button>
+            <div className="sticky top-0 z-10 bg-[#E8E3D5] px-6 md:px-12 pt-6 md:pt-8 pb-4 border-b border-[#DDD8C8]/60">
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setSelectedBlog(null)}
+                  className="p-2 hover:bg-[#F0EBE0] rounded-lg transition-colors"
+                  aria-label="Close modal"
+                >
+                  <X size={24} className="text-[#2C2416]" />
+                </button>
+              </div>
 
-            {/* Modal Content */}
-            <div className="p-8 md:p-12">
-              {/* Title */}
-              <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#2C2416] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#2C2416] mt-2">
                 {selectedBlog.title}
               </h2>
+            </div>
+
+            {/* Modal Content */}
+            <div className="px-6 md:px-12 pb-8 md:pb-12">
 
               {/* Author and Share */}
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#DDD8C8]">
