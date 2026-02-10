@@ -191,6 +191,16 @@ button,
   background: #c57549;
 }
 
+/* Blog modal scrollbar */
+.blog-modal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blog-modal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* Focus styles */
 *:focus-visible {
   outline: 2px solid #d4845c;

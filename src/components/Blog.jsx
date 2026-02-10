@@ -200,7 +200,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
       {/* Modal */}
       {selectedBlog && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#E8E3D5] rounded-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative animate-fade-in-up">
+          <div className="blog-modal-scroll bg-[#E8E3D5] rounded-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative animate-fade-in-up">
             <div className="sticky top-0 z-10 bg-[#E8E3D5] px-6 md:px-12 pt-6 md:pt-8 pb-4">
               <div className="flex justify-end">
                 <button
