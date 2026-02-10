@@ -33,16 +33,20 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20 md:pt-0 pb-12 md:pb-0 relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
-          backgroundSize: '180px 180px',
-        }}
-        aria-hidden="true"
-      />
       <div className="max-w-container mx-auto px-5 md:px-0 text-center">
+        <div
+          className={`flex justify-center mb-8 transition-all duration-1000 ${
+            isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
+          }`}
+          style={{ animationDelay: '0.1s' }}
+        >
+          <img
+            src="/adarshpp.jpg"
+            alt="Adarsh Singh"
+            className="h-28 w-28 md:h-36 md:w-36 rounded-full object-cover border-4 border-[#F0EBE0] shadow-lg"
+            loading="eager"
+          />
+        </div>
         {/* Hero Name */}
         <h1
           className={`text-5xl md:text-h1 font-bold text-[#2C2416] mb-8 font-serif transition-all duration-1000 ${

@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#E8E3D5]">
+    <div className="min-h-screen">
       <LoadingSpinner isVisible={isLoading} />
       <ProgressBar />
       <Navigation />
