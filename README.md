@@ -131,7 +131,7 @@ This project is open source and available under the MIT License.
 - Email: adarsh042021@outlook.com
 - Phone: +91 7439473588
 - LinkedIn: linkedin.com/in/adarsh-singh-/
-- GitHub: github.com/adarshsingh-1
+- GitHub: github.com/adarsh-singhdev
 
 ---
 

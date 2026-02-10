@@ -11,7 +11,7 @@ const Hero = () => {
   const socialLinks = [
     {
       label: 'GitHub',
-      url: 'https://github.com/adarshsingh-1',
+      url: 'https://github.com/adarsh-singhdev',
       icon: Github,
     },
     {

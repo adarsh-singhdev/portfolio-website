@@ -76,7 +76,7 @@ UNIX was an operating system built at Bell Labs decades ago. The original UNIX i
 Linux is not an operating system by itself. It’s a kernel created by Linus Torvalds in 1991. To make it usable, Linux is bundled with tools like the GNU toolchain and other software to form complete Linux distributions such as Ubuntu, Debian, or Red Hat.
 
 Think of UNIX as the parent concept. macOS is a UNIX-based OS, while Linux is a kernel used in many operating systems.
-I have also created a repo where I am collecting useful Linux commands for DevOps learners: https://github.com/adarshsingh-1/linux-for-devops`,
+I have also created a repo where I am collecting useful Linux commands for DevOps learners: https://github.com/adarsh-singhdev/linux-for-devops`,
     },
     {
       id: 5,
