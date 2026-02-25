@@ -98,18 +98,16 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Email CTA Button */}
+        {/* Download Resume Button at the bottom */}
         <div className="flex flex-col items-center gap-8">
-          <button
-            onClick={handleEmailClick}
-            className={`flex items-center gap-3 bg-[#2C2416] hover:bg-[#D4845C] text-white px-12 py-4 rounded-lg transition-all duration-300 hover:scale-105 group ${
-              emailCopied ? 'bg-[#4CAF50]' : ''
-            }`}
+          <a
+            href="/Adarsh_Singh_Resume.pdf"
+            download
+            className="flex items-center gap-3 bg-[#2C2416] hover:bg-[#D4845C] text-white px-12 py-4 rounded-lg transition-all duration-300 hover:scale-105 group"
           >
-            <Mail size={20} className="group-hover:animate-pulse" />
-            <span className="font-semibold">{emailCopied ? 'Email Copied!' : 'Email Me'}</span>
-            {emailCopied && <span className="text-lg">✓</span>}
-          </button>
+            <span aria-hidden="true">📄</span>
+            <span className="font-semibold">Download Resume</span>
+          </a>
 
           {/* Decorative Quote */}
           <p className="text-body md:text-body-lg text-[#5C5246] italic font-serif text-center mt-4">

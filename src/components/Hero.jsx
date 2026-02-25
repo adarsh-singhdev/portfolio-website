@@ -1,4 +1,44 @@
 import React, { useEffect, useState } from 'react';
+
+const quotes = [
+  { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+  { text: "Clean code always looks like it was written by someone who cares.", author: "Robert C. Martin" },
+  { text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author: "Martin Fowler" },
+  { text: "The best error message is the one that never shows up.", author: "Thomas Fuchs" },
+  { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+  { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+  { text: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
+  { text: "Fix the cause, not the symptom.", author: "Steve Maguire" },
+];
+
+const QuoteRotator = () => {
+  const [quote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)]);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="my-10 px-6 max-w-2xl mx-auto text-center min-h-[80px] flex flex-col items-center justify-center">
+      <div
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'translateY(0)' : 'translateY(10px)',
+          transition: 'opacity 0.8s ease, transform 0.8s ease',
+        }}
+      >
+        <p className="text-[#3D3427] text-base md:text-lg italic leading-relaxed">
+          "{quote.text}"
+        </p>
+        <span className="mt-2 block text-sm text-[#8C7B6B] font-medium tracking-wide">
+          — {quote.author}
+        </span>
+      </div>
+    </div>
+  );
+};
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Hero = () => {
@@ -8,28 +48,6 @@ const Hero = () => {
     setIsLoaded(true);
   }, []);
 
-  const socialLinks = [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/adarsh-singhdev',
-      icon: Github,
-    },
-    {
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/adarsh-singh-/',
-      icon: Linkedin,
-    },
-    {
-      label: 'Email',
-      url: 'mailto:adarsh042021@outlook.com',
-      icon: Mail,
-    },
-    {
-      label: 'Phone',
-      url: 'tel:+917439473588',
-      icon: Phone,
-    },
-  ];
 
   return (
     <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20 md:pt-0 pb-12 md:pb-0 relative overflow-hidden">
@@ -49,6 +67,7 @@ const Hero = () => {
             loading="eager"
           />
         </div>
+
 
         {/* Hero Name */}
         <h1
@@ -74,49 +93,7 @@ const Hero = () => {
         </p>
 
         {/* Resume Download */}
-        <div
-          className={`mb-10 transition-all duration-1000 ${
-            isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ animationDelay: '0.5s' }}
-        >
-          <a
-            href="/Adarsh_Singh_Resume.pdf"
-            download
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#2C2416] text-white font-medium hover:bg-[#D4845C] transition-all duration-300 hover:scale-105"
-          >
-            <span aria-hidden="true">📄</span>
-            Download Resume
-          </a>
-        </div>
-
-        {/* Social Links */}
-        <div
-          className={`flex flex-wrap justify-center gap-6 md:gap-8 transition-all duration-1000 ${
-            isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ animationDelay: '0.6s' }}
-        >
-          {socialLinks.map((link, index) => {
-            // For phone, do not open in new tab and use tel: link
-            const isPhone = link.label === 'Phone';
-            return (
-              <a
-                key={link.label}
-                href={isPhone ? link.url : link.url}
-                {...(!isPhone && { target: '_blank', rel: 'noopener noreferrer' })}
-                className="group relative text-[#5C5246] hover:text-[#D4845C] text-sm md:text-base font-medium transition-colors duration-300 flex items-center gap-2"
-                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
-                aria-label={link.label}
-              >
-                <link.icon size={18} />
-                <span>{link.label}</span>
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4845C] group-hover:w-full transition-all duration-300" />
-              </a>
-            );
-          })}
-        </div>
-
+        {/* ...existing code... */}
       </div>
     </section>
   );
