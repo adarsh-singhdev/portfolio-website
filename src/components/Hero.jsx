@@ -97,21 +97,24 @@ const Hero = () => {
           }`}
           style={{ animationDelay: '0.6s' }}
         >
-          {socialLinks.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative text-[#5C5246] hover:text-[#D4845C] text-sm md:text-base font-medium transition-colors duration-300 flex items-center gap-2"
-              style={{ animationDelay: `${0.8 + index * 0.1}s` }}
-              aria-label={link.label}
-            >
-              <link.icon size={18} />
-              <span>{link.label}</span>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4845C] group-hover:w-full transition-all duration-300" />
-            </a>
-          ))}
+          {socialLinks.map((link, index) => {
+            // For phone, do not open in new tab and use tel: link
+            const isPhone = link.label === 'Phone';
+            return (
+              <a
+                key={link.label}
+                href={isPhone ? link.url : link.url}
+                {...(!isPhone && { target: '_blank', rel: 'noopener noreferrer' })}
+                className="group relative text-[#5C5246] hover:text-[#D4845C] text-sm md:text-base font-medium transition-colors duration-300 flex items-center gap-2"
+                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+                aria-label={link.label}
+              >
+                <link.icon size={18} />
+                <span>{link.label}</span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4845C] group-hover:w-full transition-all duration-300" />
+              </a>
+            );
+          })}
         </div>
 
       </div>
