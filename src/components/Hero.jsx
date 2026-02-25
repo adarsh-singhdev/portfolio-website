@@ -34,6 +34,8 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20 md:pt-0 pb-12 md:pb-0 relative overflow-hidden">
       <div className="max-w-container mx-auto px-5 md:px-0 text-center">
+
+        {/* Profile Image */}
         <div
           className={`flex justify-center mb-8 transition-all duration-1000 ${
             isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
@@ -47,6 +49,7 @@ const Hero = () => {
             loading="eager"
           />
         </div>
+
         {/* Hero Name */}
         <h1
           className={`text-5xl md:text-h1 font-bold text-[#2C2416] mb-8 font-serif transition-all duration-1000 ${
@@ -64,11 +67,13 @@ const Hero = () => {
           }`}
           style={{ animationDelay: '0.4s' }}
         >
-          Full-Stack Developer & Problem Solver
-          <br />
-          I build scalable web applications with modern technologies and clean, efficient code.
+          Full-Stack Developer & Computer Science Engineering Student<br />
+          I build scalable, secure web applications with modern technologies.<br />
+          Focused on responsive interfaces, robust backends, and AI integration.<br />
+          Driven by continuous learning and creating impactful tech solutions.
         </p>
 
+        {/* Resume Download */}
         <div
           className={`mb-10 transition-all duration-1000 ${
             isLoaded ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
@@ -108,6 +113,7 @@ const Hero = () => {
             </a>
           ))}
         </div>
+
       </div>
     </section>
   );
