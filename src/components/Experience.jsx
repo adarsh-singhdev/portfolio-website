@@ -30,7 +30,12 @@ const Experience = () => {
       date: 'Jan 2026 – Present',
       title: 'Intern in InfoSec Dept',
       institution: 'Titan Company Limited',
-      detail: 'Working on information security initiatives and cybersecurity protocols',
+      detail: 'Working on information security initiatives and cybersecurity protocols. I collaborate closely with the EDR team to design and build security dashboards and automation workflows. My work includes:',
+      bullets: [
+        'Developed an AppTrana automation to reduce manual activity for Swyftcomply requests and automate downloading reports for each application.',
+        'Created an endpoint vulnerability dashboard for improved visibility and tracking.',
+        'Built a desktop workflow using Power Automate to automate routine processes and reduce manual effort.'
+      ]
     },
   ];
 
@@ -115,6 +120,13 @@ const Experience = () => {
                     )}
                     <p className="text-body text-[#5C5246] mb-2">{entry.institution}</p>
                     <p className="text-sm text-[#8B8276] font-medium">{entry.detail}</p>
+                    {entry.bullets && (
+                      <ul className="list-disc list-inside text-sm text-[#8B8276] mt-2 space-y-1">
+                        {entry.bullets.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               ))}
@@ -160,39 +172,39 @@ const Experience = () => {
 
         {/* Education Timeline */}
         <div className="mb-16 md:mb-2xl">
-          <h3 className="text-2xl md:text-h3 font-bold font-serif text-[#2C2416] mb-12">
+          <h3 className="text-2xl md:text-h3 font-bold font-serif text-[#2C2416] mb-8 md:mb-12">
             Education
           </h3>
 
           <div className="relative">
-            {/* Vertical Line */}
+            {/* Vertical Line (desktop only) */}
             <div className="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-[#D4845C]" />
 
-            <div className="space-y-8">
+            <div className="flex flex-col gap-6 md:gap-8">
               {timeline.map((entry, idx) => (
                 <div
                   key={entry.title}
-                  className={`flex gap-6 transition-all duration-1000 ${
+                  className={`block md:flex gap-0 md:gap-6 transition-all duration-1000 ${
                     isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
                   }`}
                   style={{ animationDelay: `${0.2 + idx * 0.15}s` }}
                 >
-                  {/* Timeline Dot */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-4 h-4 bg-[#D4845C] rounded-full mt-2 hidden md:block hover:w-6 hover:h-6 hover:mt-1 transition-all duration-300" />
+                  {/* Timeline Dot (desktop only) */}
+                  <div className="hidden md:relative md:flex-shrink-0 md:block">
+                    <div className="w-4 h-4 bg-[#D4845C] rounded-full mt-2 hover:w-6 hover:h-6 hover:mt-1 transition-all duration-300" />
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 bg-[#F0EBE0] rounded-xl p-6 md:p-lg">
+                  <div className="flex-1 bg-[#F0EBE0] rounded-xl p-4 sm:p-6 md:p-lg mx-2 md:mx-0">
                     <p className="text-sm text-[#D4845C] font-semibold mb-2">{entry.date}</p>
-                    <h4 className="text-lg md:text-h4 font-bold font-serif text-[#2C2416] mb-1">
+                    <h4 className="text-base sm:text-lg md:text-h4 font-bold font-serif text-[#2C2416] mb-1">
                       {entry.title}
                     </h4>
                     {entry.subtitle && (
-                      <p className="text-body text-[#8B8276] mb-2">{entry.subtitle}</p>
+                      <p className="text-sm sm:text-base text-[#8B8276] mb-2">{entry.subtitle}</p>
                     )}
-                    <p className="text-body text-[#5C5246] mb-2">{entry.institution}</p>
-                    <p className="text-sm text-[#8B8276] font-medium">{entry.detail}</p>
+                    <p className="text-sm sm:text-base text-[#5C5246] mb-2">{entry.institution}</p>
+                    <p className="text-xs sm:text-sm text-[#8B8276] font-medium">{entry.detail}</p>
                   </div>
                 </div>
               ))}

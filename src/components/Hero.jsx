@@ -11,47 +11,23 @@ const quotes = [
   { text: "Fix the cause, not the symptom.", author: "Steve Maguire" },
 ];
 
-const QuoteRotator = () => {
+// QuoteRotator removed. Quote logic will be integrated directly in Hero.
+
+const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [quote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)]);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setIsLoaded(true);
+    // Fade-in effect for quote
     const timer = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="my-10 px-6 max-w-2xl mx-auto text-center min-h-[80px] flex flex-col items-center justify-center">
-      <div
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? 'translateY(0)' : 'translateY(10px)',
-          transition: 'opacity 0.8s ease, transform 0.8s ease',
-        }}
-      >
-        <p className="text-[#3D3427] text-base md:text-lg italic leading-relaxed">
-          "{quote.text}"
-        </p>
-        <span className="mt-2 block text-sm text-[#8C7B6B] font-medium tracking-wide">
-          — {quote.author}
-        </span>
-      </div>
-    </div>
-  );
-};
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
-
-const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-
-  return (
-    <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20 md:pt-0 pb-12 md:pb-0 relative overflow-hidden">
-      <div className="max-w-container mx-auto px-5 md:px-0 text-center">
+    <section id="home" className="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+      <div className="my-10 px-6 max-w-2xl mx-auto text-center min-h-[80px] flex flex-col items-center justify-center">
 
         {/* Profile Image */}
         <div
@@ -67,7 +43,6 @@ const Hero = () => {
             loading="eager"
           />
         </div>
-
 
         {/* Hero Name */}
         <h1
@@ -87,13 +62,31 @@ const Hero = () => {
           style={{ animationDelay: '0.4s' }}
         >
           Full-Stack Developer & Computer Science Engineering Student<br />
-          I build scalable, secure web applications with modern technologies.<br />
-          Focused on responsive interfaces, robust backends, and AI integration.<br />
-          Driven by continuous learning and creating impactful tech solutions.
+          I’m learning how to build modern web applications, focusing on creating intuitive user interfaces and dependable backend systems.<br />
+          I’m also interested in AI and love exploring new technologies to improve my skills.<br />
         </p>
 
-        {/* Resume Download */}
-        {/* ...existing code... */}
+        {/* Random Quote Section */}
+        <div className="my-10 px-6 max-w-2xl mx-auto text-center min-h-[80px] flex flex-col items-center justify-center">
+          <div
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(10px)',
+              transition: 'opacity 0.8s ease, transform 0.8s ease',
+            }}
+          >
+            {quote && (
+              <>
+                <p className="text-[#3D3427] text-base md:text-lg italic leading-relaxed">
+                  &ldquo;{quote.text}&rdquo;
+                </p>
+                <span className="mt-2 block text-sm text-[#8C7B6B] font-medium tracking-wide">
+                  — {quote.author}
+                </span>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
