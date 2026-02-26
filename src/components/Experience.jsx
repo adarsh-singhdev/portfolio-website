@@ -29,7 +29,7 @@ const Experience = () => {
     {
       date: 'Jan 2026 – Present',
       title: 'Intern in InfoSec Dept',
-      institution: 'Titan Company Limited',
+      institution: 'Titan Company Limited (On-Site - Bangalore)',
       detail: 'Working on information security initiatives and cybersecurity protocols. I collaborate closely with the EDR team to design and build security dashboards and automation workflows. My work includes:',
       bullets: [
         'Developed an AppTrana automation to reduce manual activity for Swyftcomply requests and automate downloading reports for each application.',
@@ -73,9 +73,9 @@ const Experience = () => {
     <section
       id="experience"
       ref={experienceRef}
-      className="py-16 md:py-24 px-5 md:px-0 relative"
+      className="py-16 md:py-24 relative"
     >
-      <div className="max-w-container mx-auto">
+      <div className="my-10 px-6 max-w-2xl mx-auto text-center min-h-[80px] flex flex-col items-center justify-center">
         {/* Section Title */}
         <h2
           className={`text-4xl md:text-h2 font-bold font-serif text-[#2C2416] mb-16 md:mb-24 transition-all duration-1000 ${
@@ -87,50 +87,38 @@ const Experience = () => {
 
         {/* Experience Section */}
         <div className="mb-16 md:mb-2xl">
-          <h3 className="text-2xl md:text-h3 font-bold font-serif text-[#2C2416] mb-12">
+          <h3 className="text-2xl md:text-h3 font-bold font-serif text-[#2C2416] mb-12 text-center">
             Experience
           </h3>
 
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-[#D4845C]" />
-
-            <div className="space-y-8">
-              {experience.map((entry, idx) => (
-                <div
-                  key={entry.title}
-                  className={`flex gap-6 transition-all duration-1000 ${
-                    isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
-                  }`}
-                  style={{ animationDelay: `${0.2 + idx * 0.15}s` }}
-                >
-                  {/* Timeline Dot */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-4 h-4 bg-[#D4845C] rounded-full mt-2 hidden md:block hover:w-6 hover:h-6 hover:mt-1 transition-all duration-300" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 bg-[#F0EBE0] rounded-xl p-6 md:p-lg">
-                    <p className="text-sm text-[#D4845C] font-semibold mb-2">{entry.date}</p>
-                    <h4 className="text-lg md:text-h4 font-bold font-serif text-[#2C2416] mb-1">
-                      {entry.title}
-                    </h4>
-                    {entry.subtitle && (
-                      <p className="text-body text-[#8B8276] mb-2">{entry.subtitle}</p>
-                    )}
-                    <p className="text-body text-[#5C5246] mb-2">{entry.institution}</p>
-                    <p className="text-sm text-[#8B8276] font-medium">{entry.detail}</p>
-                    {entry.bullets && (
-                      <ul className="list-disc list-inside text-sm text-[#8B8276] mt-2 space-y-1">
-                        {entry.bullets.map((bullet, i) => (
-                          <li key={i}>{bullet}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-col items-center w-full">
+            {experience.map((entry, idx) => (
+              <div
+                key={entry.title}
+                className={`bg-[#F0EBE0] rounded-2xl p-6 md:p-8 shadow-md mb-8 transition-all duration-1000 max-w-2xl w-full mx-auto ${
+                  isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
+                }`}
+                style={{ animationDelay: `${0.2 + idx * 0.15}s` }}
+              >
+                <p className="text-[#D4845C] font-semibold text-lg mb-2">{entry.date}</p>
+                <h3 className="text-2xl md:text-3xl font-bold font-serif text-[#2C2416] mb-2">
+                  {entry.title}
+                </h3>
+                <p className="text-lg md:text-xl text-[#5C5246] font-medium mb-4">
+                  {entry.institution}
+                </p>
+                <p className="text-base md:text-lg text-[#8B8276] mb-4">
+                  {entry.detail}
+                </p>
+                {entry.bullets && (
+                  <ul className="list-disc pl-5 text-base md:text-lg text-[#8B8276] space-y-2 text-left">
+                    {entry.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
