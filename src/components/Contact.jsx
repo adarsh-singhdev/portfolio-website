@@ -22,15 +22,15 @@ const Contact = () => {
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/adarsh-singh-/',
+      value: 'linkedin.com/in/he-adarsh/',
       icon: Linkedin,
-      action: 'https://www.linkedin.com/in/adarsh-singh-/',
+      action: 'https://www.linkedin.com/in/he-adarsh/',
     },
     {
       label: 'GitHub',
-      value: 'github.com/adarsh-singhdev',
+      value: 'github.com/h-adarsh',
       icon: Github,
-      action: 'https://github.com/adarsh-singhdev',
+      action: 'https://github.com/h-adarsh',
     },
   ];
 

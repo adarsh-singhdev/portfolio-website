@@ -14,7 +14,7 @@ const Projects = () => {
         'Chrome Extension using Google Gemini API for AI-powered summarization of articles and research papers. Features dark mode, text-to-speech, and one-click export.',
       techStack: ['JavaScript (ES6+)', 'Chrome Extension APIs', 'Google Gemini API', 'HTML5', 'CSS3'],
       date: 'Aug 2025',
-      repoLink: 'https://github.com/adarsh-singhdev/Gemini-AI-Summarizer',
+      repoLink: 'https://github.com/h-adarsh/Gemini-AI-Summarizer',
     },
     {
       title: 'Arcane Pass CLI',
@@ -23,7 +23,7 @@ const Projects = () => {
         'Engineered a serverless CLI password manager with AES-256 encryption for secure credential storage. Features include rapid terminal-based access, local-first architecture, and developer-optimized commands for seamless integration into coding workflows.',
       techStack: ['Node.js', 'CLI', 'AES-256', 'Serverless'],
       date: 'Sep 2025',
-      repoLink: 'https://github.com/adarsh-singhdev/arcane-pass-cli',
+      repoLink: 'https://github.com/h-adarsh/arcane-pass-cli',
     },
     {
       title: 'CurrenSync',
@@ -33,7 +33,7 @@ const Projects = () => {
       techStack: ['React.js', 'REST APIs', 'JavaScript (ES6+)', 'Tailwind CSS'],
       date: 'Dec 2024',
       liveLink: 'https://currensync.pages.dev/',
-      repoLink: 'https://github.com/adarsh-singhdev/CurrenSync',
+      repoLink: 'https://github.com/h-adarsh/CurrenSync',
     },
     {
       title: 'NikeNest',
@@ -43,7 +43,7 @@ const Projects = () => {
       techStack: ['React.js', 'Vite', 'Tailwind CSS', 'JavaScript (ES6+)'],
       date: 'Jan 2025',
       liveLink: 'https://nikenest.pages.dev/',
-      repoLink: 'https://github.com/adarsh-singhdev/NikeNest',
+      repoLink: 'https://github.com/h-adarsh/NikeNest',
     },
     {
       title: 'Snip.ly',
@@ -62,7 +62,7 @@ const Projects = () => {
       ],
       date: 'Feb 2025',
       liveLink: 'https://snip-ly.pages.dev/',
-      repoLink: 'https://github.com/adarsh-singhdev/snip.ly',
+      repoLink: 'https://github.com/h-adarsh/snip.ly',
     },
   ];
 
