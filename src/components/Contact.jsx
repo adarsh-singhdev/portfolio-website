@@ -15,9 +15,9 @@ const Contact = () => {
       action: 'mailto:adarsh042021@outlook.com',
     },
     {
-      label: 'Phone',
+      value: 'linkedin.com/in/h-adarsh/',
       value: '+91 7439473588',
-      icon: Phone,
+      action: 'https://www.linkedin.com/in/h-adarsh/',
       action: 'tel:+917439473588',
     },
     {
