@@ -1,17 +1,17 @@
-// Color constants
+// Color constants — Cool Graphite palette
 export const colors = {
-  background: '#E8E3D5',
-  cardBg: '#F0EBE0',
-  navBg: '#DDD8C8',
-  textPrimary: '#2C2416',
-  textSecondary: '#5C5246',
-  textTertiary: '#8B8276',
-  accent: '#D4845C',
-  accentHover: '#C57549',
-  accentLight: '#E8A584',
-  accentDark: '#B86A3F',
-  darkModeBg: '#1A1612',
-  darkModeText: '#E8E3D5',
+  background: '#E9EAEA',
+  cardBg: '#F2F3F3',
+  navBg: '#DCDEDE',
+  textPrimary: '#1E2124',
+  textSecondary: '#4A4E54',
+  textTertiary: '#7A8088',
+  accent: '#4A7A8C',
+  accentHover: '#3A6A7C',
+  accentLight: '#6A9AAC',
+  accentDark: '#2E5A6C',
+  darkModeBg: '#14171A',
+  darkModeText: '#E9EAEA',
 };
 
 // Spacing constants
@@ -35,9 +35,9 @@ export const typography = {
 
 // Shadow constants
 export const shadows = {
-  sm: '0 2px 4px rgba(44, 36, 22, 0.08)',
-  md: '0 4px 12px rgba(44, 36, 22, 0.12)',
-  lg: '0 8px 24px rgba(44, 36, 22, 0.15)',
+  sm: '0 2px 4px rgba(30, 33, 36, 0.06)',
+  md: '0 4px 12px rgba(30, 33, 36, 0.10)',
+  lg: '0 8px 24px rgba(30, 33, 36, 0.13)',
 };
 
 // Breakpoints

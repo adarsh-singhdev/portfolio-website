@@ -49,7 +49,7 @@ const Contact = () => {
       <div className="max-w-container mx-auto">
         {/* Section Title */}
         <h2
-          className={`text-5xl md:text-[56px] font-bold font-serif text-[#2C2416] mb-8 text-center transition-all duration-1000 ${
+          className={`text-5xl md:text-[56px] font-bold font-serif text-[#1E2124] mb-8 text-center transition-all duration-1000 ${
             isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-10'
           }`}
         >
@@ -58,14 +58,14 @@ const Contact = () => {
 
         {/* Description */}
         <p
-          className={`text-body md:text-body-lg text-[#5C5246] text-center mb-16 md:mb-2xl max-w-2xl mx-auto transition-all duration-1000 ${
+          className={`text-body md:text-body-lg text-[#4A4E54] text-center mb-16 md:mb-2xl max-w-2xl mx-auto transition-all duration-1000 ${
             isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
           }`}
           style={{ animationDelay: '0.2s' }}
         >
-          I'm currently available for full-time opportunities and freelance projects in full-stack
-          development. Whether you have a project in mind or just want to connect, feel free to reach
-          out. Let's build something amazing together!
+          I'm currently seeking full-time opportunities in Security Engineering, AppSec,
+          and full-stack development roles. If you're building a security team or have a
+          project that needs secure architecture, let's connect.
         </p>
 
         {/* Contact Cards Grid */}
@@ -81,16 +81,16 @@ const Contact = () => {
               href={card.action}
               target={card.action.startsWith('http') ? '_blank' : undefined}
               rel={card.action.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className={`bg-[#F0EBE0] rounded-2xl p-6 flex items-center gap-4 hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] group transform ${
+              className={`bg-[#F2F3F3] rounded-2xl p-6 flex items-center gap-4 hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] group transform ${
                 isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
               }`}
               style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
               aria-label={card.label}
             >
-              <card.icon size={28} className="text-[#D4845C] flex-shrink-0" />
+              <card.icon size={28} className="text-[#4A7A8C] flex-shrink-0" />
               <div className="min-w-0">
-                <p className="text-sm text-[#8B8276]">{card.label}</p>
-                <p className="text-body font-medium text-[#2C2416] truncate group-hover:text-[#D4845C] transition-colors duration-300">
+                <p className="text-sm text-[#7A8088]">{card.label}</p>
+                <p className="text-body font-medium text-[#1E2124] truncate group-hover:text-[#4A7A8C] transition-colors duration-300">
                   {card.value}
                 </p>
               </div>
@@ -103,15 +103,15 @@ const Contact = () => {
           <a
             href="/Adarsh_Singh_Resume.pdf"
             download
-            className="flex items-center gap-3 bg-[#2C2416] hover:bg-[#D4845C] text-white px-12 py-4 rounded-lg transition-all duration-300 hover:scale-105 group"
+            className="flex items-center gap-3 bg-[#1E2124] hover:bg-[#4A7A8C] text-white px-12 py-4 rounded-lg transition-all duration-300 hover:scale-105 group"
           >
             <span aria-hidden="true">📄</span>
             <span className="font-semibold">Download Resume</span>
           </a>
 
           {/* Decorative Quote */}
-          <p className="text-body md:text-body-lg text-[#5C5246] italic font-serif text-center mt-4">
-            Engineered with care, powered by React
+          <p className="text-body md:text-body-lg text-[#4A4E54] italic font-serif text-center mt-4">
+            Engineered for security, powered by React
           </p>
         </div>
       </div>

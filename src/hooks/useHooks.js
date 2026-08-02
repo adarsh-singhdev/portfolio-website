@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
 
 export const useIntersectionObserver = (ref, options = {}) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    if (!ref?.current) {
+      return;
+    }
+
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
@@ -14,14 +23,10 @@ export const useIntersectionObserver = (ref, options = {}) => {
       ...options,
     });
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(ref.current);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
   }, [ref, options]);
 

@@ -25,7 +25,7 @@ A forward proxy protects users. A reverse proxy protects servers. Load balancing
     {
       id: 2,
       title: 'From Borg to Kubernetes: The Journey to a Global Standard',
-      excerpt: 'How Google’s internal system Borg inspired Kubernetes, and why container orchestration became essential for modern cloud-native applications.',
+      excerpt: "How Google's internal system Borg inspired Kubernetes, and why container orchestration became essential for modern cloud-native applications.",
 
       content: `Ever wondered how tech giants like Google manage the massive scale of applications like Gmail or Google Drive without a hiccup? The story starts with a shift from bulky virtual machines to nimble containers and the critical need for a conductor to orchestrate them all.
 
@@ -49,9 +49,9 @@ Today, Kubernetes is the de facto standard for cloud-native development, used by
     {
       id: 3,
       title: 'Encryption vs Hashing: How Secure Systems Decide',
-      excerpt: 'Encryption hides data so only the right person can read it. Hashing verifies data so you can trust it hasn’t changed. Both are essential to modern security.',
+      excerpt: "Encryption hides data so only the right person can read it. Hashing verifies data so you can trust it hasn't changed. Both are essential to modern security.",
 
-      content: `Think encryption and hashing are the same? They’re not — and knowing the difference changes how you design secure systems.
+      content: `Think encryption and hashing are the same? They're not — and knowing the difference changes how you design secure systems.
 
 Cryptography is the science of protecting digital information. It provides the foundation for encryption, hashing, and digital signatures.
 
@@ -59,7 +59,7 @@ Encryption works by converting readable data (plain text) into unreadable text (
 
 Hashing, on the other hand, is one-way. It takes an input and produces a fixed-length hash value that cannot be converted back to the original data. Even a small change in input completely changes the output. Algorithms like SHA-256 and bcrypt are used to hash passwords and verify data integrity.
 
-In short, encryption hides data so only the right person can read it, while hashing verifies data so you can trust it hasn’t changed.`,
+In short, encryption hides data so only the right person can read it, while hashing verifies data so you can trust it hasn't changed.`,
     },
     {
       id: 4,
@@ -73,7 +73,7 @@ An operating system includes the kernel plus additional tools that make the comp
 
 UNIX was an operating system built at Bell Labs decades ago. The original UNIX is gone, but its design became so popular that many systems copied it. Today, UNIX refers to systems that follow the same philosophy and standards, usually through POSIX compliance.
 
-Linux is not an operating system by itself. It’s a kernel created by Linus Torvalds in 1991. To make it usable, Linux is bundled with tools like the GNU toolchain and other software to form complete Linux distributions such as Ubuntu, Debian, or Red Hat.
+Linux is not an operating system by itself. It's a kernel created by Linus Torvalds in 1991. To make it usable, Linux is bundled with tools like the GNU toolchain and other software to form complete Linux distributions such as Ubuntu, Debian, or Red Hat.
 
 Think of UNIX as the parent concept. macOS is a UNIX-based OS, while Linux is a kernel used in many operating systems.
 I have also created a repo where I am collecting useful Linux commands for DevOps learners: https://github.com/h-adarsh/linux-for-devops`,
@@ -148,19 +148,19 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
         {/* Section Header */}
         <div className="mb-16 md:mb-24">
           <h2
-            className={`text-4xl md:text-h2 font-bold font-serif text-[#2C2416] mb-4 transition-all duration-1000 ${
+            className={`text-4xl md:text-h2 font-bold font-serif text-[#1E2124] mb-4 transition-all duration-1000 ${
               isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-10'
             }`}
           >
             Blog & Articles
           </h2>
           <p
-            className={`text-body md:text-body-lg text-[#5C5246] max-w-2xl transition-all duration-1000 ${
+            className={`text-body md:text-body-lg text-[#4A4E54] max-w-2xl transition-all duration-1000 ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
             }`}
             style={{ animationDelay: '0.1s' }}
           >
-            Thoughts on development, problem-solving, and continuous learning
+            Thoughts on security, architecture, and systems engineering
           </p>
         </div>
 
@@ -170,17 +170,17 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
             <div
               key={blog.id}
               onClick={() => setSelectedBlog(blog)}
-              className={`bg-[#F0EBE0] rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer w-full max-w-[320px] aspect-square flex flex-col justify-between ${
+              className={`bg-[#F2F3F3] rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer w-full max-w-[320px] aspect-square flex flex-col justify-between ${
                 isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
               }`}
               style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
             >
               {/* Title + Excerpt */}
               <div className="flex-1">
-                <h3 className="text-[20px] md:text-[22px] font-bold font-serif text-[#2C2416] mb-3 group-hover:text-[#D4845C] transition-colors duration-300 line-clamp-2">
+                <h3 className="text-[20px] md:text-[22px] font-bold font-serif text-[#1E2124] mb-3 group-hover:text-[#4A7A8C] transition-colors duration-300 line-clamp-2">
                   {blog.title}
                 </h3>
-                <p className="text-[14px] md:text-[15px] text-[#5C5246] line-clamp-4">
+                <p className="text-[14px] md:text-[15px] text-[#4A4E54] line-clamp-4">
                   {blog.excerpt}
                 </p>
               </div>
@@ -189,7 +189,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
               <div className="mt-4 flex items-end justify-end">
                 <ArrowRight
                   size={22}
-                  className="text-[#D4845C] group-hover:translate-x-1 transition-transform duration-300 shrink-0"
+                  className="text-[#4A7A8C] group-hover:translate-x-1 transition-transform duration-300 shrink-0"
                 />
               </div>
             </div>
@@ -200,19 +200,19 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
       {/* Modal */}
       {selectedBlog && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="blog-modal-scroll bg-[#E8E3D5] rounded-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative animate-fade-in-up">
-            <div className="sticky top-0 z-10 bg-[#E8E3D5] px-6 md:px-12 pt-6 md:pt-8 pb-4">
+          <div className="blog-modal-scroll bg-[#E9EAEA] rounded-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative animate-fade-in-up">
+            <div className="sticky top-0 z-10 bg-[#E9EAEA] px-6 md:px-12 pt-6 md:pt-8 pb-4">
               <div className="flex justify-end">
                 <button
                   onClick={() => setSelectedBlog(null)}
-                  className="p-2 hover:bg-[#F0EBE0] rounded-lg transition-colors"
+                  className="p-2 hover:bg-[#F2F3F3] rounded-lg transition-colors"
                   aria-label="Close modal"
                 >
-                  <X size={24} className="text-[#2C2416]" />
+                  <X size={24} className="text-[#1E2124]" />
                 </button>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#2C2416] mt-2">
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#1E2124] mt-2">
                 {selectedBlog.title}
               </h2>
             </div>
@@ -221,13 +221,13 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
             <div className="px-6 md:px-12 pb-8 md:pb-12">
 
               {/* Author and Share */}
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#DDD8C8]">
+              <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#DCDEDE]">
                 <div>
-                  <p className="text-body text-[#5C5246]">By <span className="font-semibold">Adarsh Singh</span></p>
+                  <p className="text-body text-[#4A4E54]">By <span className="font-semibold">Adarsh Singh</span></p>
                 </div>
                 <button
                   onClick={() => handleShare(selectedBlog)}
-                  className="flex items-center gap-2 text-[#D4845C] hover:text-[#C57549] transition-colors"
+                  className="flex items-center gap-2 text-[#4A7A8C] hover:text-[#3A6A7C] transition-colors"
                   title="Share article"
                 >
                   <Share2 size={18} />
@@ -239,14 +239,14 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
                 {selectedBlog.content.split('\n\n').map((paragraph, idx) => {
                   if (paragraph.startsWith('## ')) {
                     return (
-                      <h3 key={idx} className="text-2xl font-bold font-serif text-[#2C2416] mt-8 mb-4">
+                      <h3 key={idx} className="text-2xl font-bold font-serif text-[#1E2124] mt-8 mb-4">
                         {paragraph.replace('## ', '')}
                       </h3>
                     );
                   }
                   if (paragraph.startsWith('- ')) {
                     return (
-                      <ul key={idx} className="list-disc list-inside space-y-2 text-[#5C5246] mb-4">
+                      <ul key={idx} className="list-disc list-inside space-y-2 text-[#4A4E54] mb-4">
                         {paragraph.split('\n').map((item, i) => (
                           <li key={i} className="ml-4">{item.replace('- ', '')}</li>
                         ))}
@@ -254,7 +254,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
                     );
                   }
                   return (
-                    <p key={idx} className="text-body text-[#5C5246] mb-4 leading-relaxed">
+                    <p key={idx} className="text-body text-[#4A4E54] mb-4 leading-relaxed">
                       {paragraph}
                     </p>
                   );
@@ -262,7 +262,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
               </div>
 
               {/* Navigation */}
-              <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#DDD8C8]">
+              <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#DCDEDE]">
                 <button
                   onClick={() => {
                     const currentIdx = blogs.findIndex(b => b.id === selectedBlog.id);
@@ -271,7 +271,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
                     }
                   }}
                   disabled={blogs.findIndex(b => b.id === selectedBlog.id) === 0}
-                  className="flex items-center gap-2 text-[#D4845C] hover:text-[#C57549] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center gap-2 text-[#4A7A8C] hover:text-[#3A6A7C] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <ArrowLeft size={18} />
                   <span>Previous</span>
@@ -285,7 +285,7 @@ With Kafka in place, StreamStore transformed from a fragile, tightly-coupled sys
                     }
                   }}
                   disabled={blogs.findIndex(b => b.id === selectedBlog.id) === blogs.length - 1}
-                  className="flex items-center gap-2 text-[#D4845C] hover:text-[#C57549] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center gap-2 text-[#4A7A8C] hover:text-[#3A6A7C] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <span>Next</span>
                   <ArrowRightIcon size={18} />

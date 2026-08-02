@@ -7,23 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        beige: {
-          50: '#F5F5F5',
-          100: '#F0EBE0',
-          200: '#E8E3D5',
-          300: '#DDD8C8',
-          400: '#D4C4B0',
+        graphite: {
+          50: '#F7F7F8',
+          100: '#F2F3F3',
+          200: '#E9EAEA',
+          300: '#DCDEDE',
+          400: '#C8CBCD',
         },
-        brown: {
-          50: '#8B8276',
-          100: '#5C5246',
-          200: '#2C2416',
+        slate: {
+          50: '#7A8088',
+          100: '#4A4E54',
+          200: '#1E2124',
         },
-        orange: {
-          accent: '#D4845C',
-          hover: '#C57549',
-          light: '#E8A584',
-          dark: '#B86A3F',
+        steel: {
+          accent: '#4A7A8C',
+          hover: '#3A6A7C',
+          light: '#6A9AAC',
+          dark: '#2E5A6C',
         },
       },
       fontFamily: {
@@ -50,9 +50,9 @@ export default {
         '3xl': '96px',
       },
       boxShadow: {
-        'sm': '0 2px 4px rgba(44, 36, 22, 0.08)',
-        'md': '0 4px 12px rgba(44, 36, 22, 0.12)',
-        'lg': '0 8px 24px rgba(44, 36, 22, 0.15)',
+        'sm': '0 2px 4px rgba(30, 33, 36, 0.06)',
+        'md': '0 4px 12px rgba(30, 33, 36, 0.10)',
+        'lg': '0 8px 24px rgba(30, 33, 36, 0.13)',
       },
       maxWidth: {
         'container': '900px',
